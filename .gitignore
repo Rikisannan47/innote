@@ -1,0 +1,43 @@
+# Dependencias
+node_modules/
+frontend/node_modules/
+package-lock.json
+frontend/package-lock.json
+
+# Build outputs
+dist/
+frontend/dist/
+build/
+frontend/build/
+
+# Entorno
+.env
+.env.local
+.env.production
+.env.development
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# SonarQube
+.scannerwork/
+.sonar/
+sonar-project.properties.backup
+
+# Cache de Vite
+frontend/.vite/
