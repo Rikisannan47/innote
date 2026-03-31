@@ -165,6 +165,8 @@ Términos y Condiciones: 7 días para cambios y devoluciones, 1 año de garantí
                 <option>D</option>
                 <option>E</option>
                 <option>F</option>
+                <option>G</option>
+                <option>H</option>
             </select>
 
             <label>Línea nueva:</label>

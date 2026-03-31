@@ -21,7 +21,6 @@ const NoDisponible = ({onGenerar}) => {
             alert("Complete todos los campos obligatorios ⚠️");
             return;
         }
-
         //Construcción de la nota en formato CRM
         let nota = `- Contacto fallido.
 Atiende ${quienAtiende}, ${parentesco}, indica que

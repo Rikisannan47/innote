@@ -111,8 +111,15 @@ import {useState} from "react";
             return;
         }
 
-        const nota = `Cliente titular: ${nombre} se realiza cambio de plan ${planActual} a ${planNuevo} con una renta final de $${valorNuevo} + IVU aproximadamente, cliente acepta cambio de plan y tendrá prorrateo en su primera factura únicamente, venta realizada por ${nombreAsesor} de Grupo Especializado, CLIENTE ORIENTADO DE CARGO DE PRORRATEO, BOLETIN VALIDO HASTA ${formatearFechaUSA(fechaBoletin)}. 00811.`
+        let nota = `Cliente titular: ${nombre} se realiza cambio de plan ${planActual} a ${planNuevo} con una renta final de $${valorNuevo} + IVU aproximadamente, cliente acepta cambio de plan y tendrá prorrateo en su primera factura únicamente, venta realizada por ${nombreAsesor} de Grupo Especializado, CLIENTE ORIENTADO DE CARGO DE PRORRATEO, BOLETIN VALIDO HASTA ${formatearFechaUSA(fechaBoletin)}. 00811.`
         
+        if (agregarComentario === "si" && comentarioAdicional.trim() !== "") {
+        nota += `
+
+Comentario adicional:
+${comentarioAdicional.trim()}`;
+    }
+
         onGenerar(nota);
     };
 

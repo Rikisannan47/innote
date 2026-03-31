@@ -9,6 +9,8 @@ import NoInteresSatisfecho from "../NoVentaUpsell/components/NoInteresSatisfecho
 import NoInteresTiempo from "../NoVentaUpsell/components/NoInteresTiempo";
 import NoInteresPermanencia from "../NoVentaUpsell/components/NoInteresPermanencia";
 import Seguimiento from "../NoVentaUpsell/components/Seguimiento";
+import Suspendido from "../NoVentaUpsell/components/Suspendido";
+import ResumenAtencionNoVenta from "../NoVentaUpsell/components/ResumenAtencionNoVenta";
 import Upsell3PlaySin from "../VentaUpsell/components/Upsell3PlaySinRenovacion";
 import Upsell3PlayCon from "../VentaUpsell/components/Upsell3PlayConRenovacion";
 import ClaroTVNuevo from "../VentaUpsell/components/ClaroTVNuevo";
@@ -21,6 +23,10 @@ import VentaLineaNueva from "../VentaUpsell/components/VentaLineaNueva";
 import VentaPortabilidad from "../VentaUpsell/components/VentaPortabilidad";
 import DespachoEquipo from "../VentaUpsell/components/DespachoEquipo";
 import MemoAccesorios from "../VentaUpsell/components/MemoAccesorios";
+import MemoVentaHogar from "../VentaUpsell/components/MemoVenta";
+import VentaCeluProteccion from "../VentaUpsell/components/VentaCeluProteccion";
+import ResumenAtencion from "../VentaUpsell/components/ResumenAtenciónVenta";
+import Cuelga from "../NoVentaUpsell/components/Cuelga";
 import MasivoNoVenta from "../NoVentaMasivo/components/NoVenta";
 import MasivoClienteCuelga from "../NoVentaMasivo/components/Cuelga";
 import LlamadaOutbound from "../NoVentaMasivo/components/LlamadaOutbound";
@@ -187,6 +193,9 @@ const UpsellFormView = () => {
                 <option value="portabilidad">Venta Portabilidad</option>
                 <option value="despacho">Despacho Equipo</option>
                 <option value="memo_accesorios">Memo / Accesorios</option>
+                <option value="venta_hogar">Memo Venta Hogar</option>
+                <option value="venta_celu">Celu-Protección</option>
+                <option value="resumen_atencion">Resumen Atención</option>
             </select>
             </>
         )}
@@ -275,12 +284,15 @@ const UpsellFormView = () => {
                         <option value="">Seleccione motivo...</option>
                         <option value="no_contesta">No contesta</option>
                         <option value="buzon">Buzón de voz</option>
+                        <option value="Cuelga">Cuelga</option>
                         <option value="no_disponible">No Disponible</option>
-                        <option value= "satisfecho">No interesado (Satisfecho con lo actual)</option>
+                        <option value="satisfecho">No interesado (Satisfecho con lo actual)</option>
                         <option value="precio">No interesado por precio  (Objeción Económica)</option>
                         <option value="tiempo">No interesado por falta de tiempo (Llamada en mal momento)</option>
                         <option value="permanencia">Rechazo por permanencia o competencia</option>
                         <option value="seguimiento">Seguimiento</option>
+                        <option value="suspendido">Suspendido</option>
+                        <option value="resumen_atencion_no_venta">Resumen Atención</option>
                 </select>
             </>
         )}
@@ -295,6 +307,10 @@ const UpsellFormView = () => {
 
             {motivoNoVenta === "buzon" && (
                 <BuzonVoz onGenerar={generarNota}/>
+            )}
+
+            {motivoNoVenta === "Cuelga" && (
+                <Cuelga onGenerar={generarNota}/>
             )}
 
             {motivoNoVenta === "no_disponible" && (
@@ -317,6 +333,14 @@ const UpsellFormView = () => {
             )}
             {motivoNoVenta === "seguimiento" && (
                 <Seguimiento onGenerar={generarNota}/>
+            )}
+
+             {motivoNoVenta === "suspendido" && (
+                <Suspendido onGenerar={generarNota}/>
+            )}
+
+            {motivoNoVenta === "resumen_atencion_no_venta" && (
+                <ResumenAtencionNoVenta onGenerar={generarNota}/>
             )}
 
 
@@ -425,6 +449,18 @@ const UpsellFormView = () => {
                 <MemoAccesorios onGenerar={generarNota}/>
             )}
 
+            {motivoVentaUpsell === "venta_hogar" && (
+                <MemoVentaHogar onGenerar={generarNota}/>
+            )}
+
+            {motivoVentaUpsell === "venta_celu" && (
+                <VentaCeluProteccion onGenerar={generarNota}/>
+            )}
+
+            {motivoVentaUpsell === "resumen_atencion" && (
+                <ResumenAtencion onGenerar={generarNota}/>
+            )}
+
 
             {/* VENTAS MASIVO */}
 
@@ -475,6 +511,7 @@ const UpsellFormView = () => {
             {motivoVentaMasivo === "accesorio" && (
                 <AccesoriosVenta onGenerar={generarNota}/>
             )}
+            
 
 
         </div>
