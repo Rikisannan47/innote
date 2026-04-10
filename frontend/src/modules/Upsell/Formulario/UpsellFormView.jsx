@@ -25,7 +25,7 @@ import DespachoEquipo from "../VentaUpsell/components/DespachoEquipo";
 import MemoAccesorios from "../VentaUpsell/components/MemoAccesorios";
 import MemoVentaHogar from "../VentaUpsell/components/MemoVenta";
 import VentaCeluProteccion from "../VentaUpsell/components/VentaCeluProteccion";
-import ResumenAtencion from "../VentaUpsell/components/ResumenAtenciónVenta";
+import ResumenAtencion from "../VentaUpsell/components/ResumenAtencionVenta";
 import Cuelga from "../NoVentaUpsell/components/Cuelga";
 import MasivoNoVenta from "../NoVentaMasivo/components/NoVenta";
 import MasivoClienteCuelga from "../NoVentaMasivo/components/Cuelga";
